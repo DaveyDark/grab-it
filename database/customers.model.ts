@@ -1,6 +1,6 @@
-import { Schema } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
-export interface ICustomers extends Document {
+export interface ICustomer extends Document {
   Name: string;
   Address: string;
 
@@ -10,7 +10,7 @@ export interface ICustomers extends Document {
   Latitude: number;
   Longitude: number;
 }
-const CustomersSchema: Schema = new Schema({
+const CustomerSchema: Schema = new Schema({
   Name: { type: String, required: true },
   Address: { type: String, required: true },
   Pincode: { type: Number, required: true },
@@ -19,3 +19,8 @@ const CustomersSchema: Schema = new Schema({
   Latitude: { type: Number, required: true },
   Longitude: { type: Number, required: true },
 });
+
+const Customer =
+  models.Customer || model<ICustomer>("Customer", CustomerSchema);
+
+export default Customer;

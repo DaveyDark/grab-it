@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 export interface ISeller extends Document {
   name: string;
@@ -21,3 +21,7 @@ const SellerSchema: Schema = new Schema({
   latitude: { type: Number, required: true },
   longitude: { type: Number, required: true },
 });
+
+const Seller = models.Seller || model<ISeller>("Seller", SellerSchema);
+
+export default Seller;
