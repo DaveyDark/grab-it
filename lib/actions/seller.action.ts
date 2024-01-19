@@ -14,11 +14,15 @@ export async function getIdFromClerkId(clerkId: string) {
   }
 }
 
-export async function updateSellerProfile() {
+export async function updateSellerProfile(params: any) {
   try {
     await connectToDatabase();
+
+    await Seller.findOneAndUpdate({ _id: params.id }, params, {
+      new: true,
+    });
   } catch (err: any) {
-    console.error(`Error connecting to database: ${err}`);
+    console.error(`Error updating seller: ${err}`);
     throw new Error(err);
   }
 }

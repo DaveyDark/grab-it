@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -16,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import * as z from "zod";
 import { SellerSchema } from "@/lib/validations";
 
-const page = () => {
+const Page = () => {
   const form = useForm<z.infer<typeof SellerSchema>>({
     resolver: zodResolver(SellerSchema),
     defaultValues: {
@@ -134,4 +133,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
