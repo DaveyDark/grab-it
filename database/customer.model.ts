@@ -1,23 +1,24 @@
 import { Schema, model, models } from "mongoose";
 
 export interface ICustomer extends Document {
-  Name: string;
-  Address: string;
-
-  Pincode: number;
-  City: string;
-  State: string;
-  Latitude: number;
-  Longitude: number;
+  name: string;
+  address: string;
+  pincode: number;
+  city: string;
+  state: string;
+  latitude: number;
+  longitude: number;
+  clerkId: string;
 }
 const CustomerSchema: Schema = new Schema({
-  Name: { type: String },
-  Address: { type: String },
-  Pincode: { type: Number },
-  City: { type: String },
-  State: { type: String },
-  Latitude: { type: Number },
-  Longitude: { type: Number },
+  clerkId: { type: String },
+  name: { type: String },
+  address: { type: String },
+  pincode: { type: Number },
+  city: { type: String },
+  state: { type: String },
+  latitude: { type: Number },
+  longitude: { type: Number },
 });
 
 const Customer =
