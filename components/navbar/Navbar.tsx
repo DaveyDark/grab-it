@@ -13,11 +13,11 @@ const Navbar = () => {
   return (
     < div className='flex items-center justify-between h-20 bg-navbarGreen p-4' >
       <div className='flex items-center'>
-        <Image src={Logo} height={50} width={50} className='mr-4' />
-        <p className='text-white text-2xl font-semibold font-sans'>Grab It</p>
+        <Image src={Logo} height={50} width={50} className='mr-4' alt='Logo' />
+        <p className='text-white text-2xl font-semibold font-sans'>GrabIt</p>
       </div>
       <div className='flex flex-row bg-[#1C7341] rounded-full w-[30%]'>
-        <Image src={Search} height={20} width={20} className='object-contain ml-3' />
+        <Image src={Search} height={20} width={20} className='object-contain ml-3' alt='Search' />
         <Input placeholder='Search the product' className='bg-transparent border-none placeholder:text-light-400' />
       </div>
 
@@ -25,10 +25,10 @@ const Navbar = () => {
       <div className='flex items-center space-x-4'>
         <SignedIn>
           <Button variant="outline" className='ml-4 rounded-full bg-[#19723F] border-none group'>
-            <Image src={Cart} height={20} width={20} className='m-2 group-hover:invert' />
+            <Image src={Cart} height={20} width={20} className='m-2 group-hover:invert' alt='Cart' />
             <Link href='/cart' className='text-white text-[12px] m-2 group-hover:text-[#19723F]'>My Cart</Link>
           </Button>
-          <UserButton className='ml-4 h-8 w-8' />
+          <UserButton />
         </SignedIn>
 
         <SignedOut>
