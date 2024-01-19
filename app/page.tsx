@@ -16,6 +16,7 @@ const page = () => {
           exciting ranges of products
         </p>
       </div>
+
     </section>
   );
 };
