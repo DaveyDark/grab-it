@@ -12,12 +12,12 @@ export interface ICustomer extends Document {
 }
 const CustomerSchema: Schema = new Schema({
   Name: { type: String, required: true },
-  Address: { type: String, required: true },
-  Pincode: { type: Number, required: true },
-  City: { type: String, required: true },
-  State: { type: String, required: true },
-  Latitude: { type: Number, required: true },
-  Longitude: { type: Number, required: true },
+  Address: { type: String },
+  Pincode: { type: Number },
+  City: { type: String },
+  State: { type: String },
+  Latitude: { type: Number },
+  Longitude: { type: Number },
 });
 
 const Customer =
