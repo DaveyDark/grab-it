@@ -11,7 +11,7 @@ export interface ICustomer extends Document {
   Longitude: number;
 }
 const CustomerSchema: Schema = new Schema({
-  Name: { type: String, required: true },
+  Name: { type: String },
   Address: { type: String },
   Pincode: { type: Number },
   City: { type: String },
