@@ -3,8 +3,10 @@ import Image from 'next/image'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
-import Logo from '@/public/assets/Logo.png'
 import Link from 'next/link'
+import Logo from '@/public/assets/logo.png'
+import Cart from '@/public/assets/cart.png'
+import Search from '@/public/assets/search.png'
 
 
 const Navbar = () => {
@@ -12,15 +14,21 @@ const Navbar = () => {
     < div className='flex items-center justify-between h-20 bg-navbarGreen p-4' >
       <div className='flex items-center'>
         <Image src={Logo} height={50} width={50} className='mr-4' />
-        <p className='text-white text-2xl font-semibold'>Grab It</p>
+        <p className='text-white text-2xl font-semibold font-sans'>Grab It</p>
+      </div>
+      <div className='flex flex-row bg-[#1C7341] rounded-full w-[30%]'>
+        <Image src={Search} height={20} width={20} className='object-contain ml-3' />
+        <Input placeholder='Search the product' className='bg-transparent border-none placeholder:text-light-400' />
       </div>
 
-      <div className='flex items-center space-x-4'>
 
+      <div className='flex items-center space-x-4'>
         <SignedIn>
-          <Button variant="outline" className='ml-4'>My Cart</Button>
-          <Input placeholder='Search the product' />
-          <UserButton className='ml-4' />
+          <Button variant="outline" className='ml-4 rounded-full bg-[#19723F] border-none group'>
+            <Image src={Cart} height={20} width={20} className='m-2 group-hover:invert' />
+            <Link href='/cart' className='text-white text-[12px] m-2 group-hover:text-[#19723F]'>My Cart</Link>
+          </Button>
+          <UserButton className='ml-4 h-8 w-8' />
         </SignedIn>
 
         <SignedOut>
