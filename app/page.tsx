@@ -11,7 +11,7 @@ const page = () => {
           <span className="text-8xl font-bold text-[#FFB700]">Grab</span> before
           it&apos;s gone...
         </p>
-        <p className="text-4xl font-semibold text-[#A6A6A6] mb-5">
+        <p className="text-4xl font-semibold text-[#A6A6A6] mb-12">
           Unbeatable<span className="text-[#FFB700]"> Discounts</span> on
           exciting ranges of products
         </p>

@@ -32,7 +32,6 @@ const Navbar = () => {
         </SignedIn>
 
         <SignedOut>
-          <Input placeholder='Search the product' />
           <Button variant="outline" className='ml-4 bg-[#FFB700] border-none rounded-full'>
             <Link href="/sign-up" className='text-[#00622A] font-bold'>Sign Up</Link>
           </Button>
