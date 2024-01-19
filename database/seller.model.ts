@@ -6,6 +6,7 @@ export interface ISeller extends Document {
   bussinessName: string;
   city: string;
   state: string;
+  
   latitude: number;
   longitude: number;
 }
