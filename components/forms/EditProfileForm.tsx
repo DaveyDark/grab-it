@@ -17,10 +17,12 @@ import { CustomerSchema } from "@/lib/validations";
 import { updateUser } from "@/lib/actions/customer.action";
 import { useAuth } from "@clerk/nextjs";
 import { redirect, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const EditProfileForm = ({ clerkId, user }: { clerkId: string; user: any }) => {
   const mongoUser = JSON.parse(user);
   const path = usePathname();
+  const router = useRouter();
   const form = useForm<z.infer<typeof CustomerSchema>>({
     resolver: zodResolver(CustomerSchema),
     defaultValues: {
@@ -53,7 +55,7 @@ const EditProfileForm = ({ clerkId, user }: { clerkId: string; user: any }) => {
   async function onSubmit(values: z.infer<typeof CustomerSchema>) {
     try {
       await updateUser({ clerkId: clerkId, path: path, updateData: values });
-      redirect("/profile");
+      router.push("/profile");
     } catch (error) {
       console.error(`Error updating user: ${error}`);
     }
