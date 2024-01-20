@@ -10,10 +10,12 @@ import Search from "@/public/assets/search.png";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between h-20 bg-navbarGreen p-4">
+    <div className="flex items-center justify-between h-20 bg-navbarGreen p-4 sticky top-0">
       <div className="flex items-center">
         <Image src={Logo} height={50} width={50} className="mr-4" alt="Logo" />
-        <p className="text-white text-2xl font-semibold font-sans">GrabIt</p>
+        <p className="text-white text-2xl font-semibold font-sans">
+          <span className="text-brandYellow">Grab</span>It
+        </p>
       </div>
       <div className="flex flex-row bg-[#1C7341] rounded-full w-[30%]">
         <Image
