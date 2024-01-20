@@ -11,6 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Category from "../components/category/page";
 import { category } from "@/constants/category";
 import Image from "next/image";
+import Footer from "@/components/shared/footer";
 
 const page = () => {
   return (
@@ -102,6 +103,7 @@ const page = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </main>
   );
 };
