@@ -15,6 +15,7 @@ const Products = async ({ params }: any) => {
         {productDetails.map((product, index) => (
           <ProductCard
             key={index} // Added key attribute for list rendering
+            _id={product._id}
             img={product.image}
             name={product.name}
             weight={product.weight}
