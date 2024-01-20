@@ -25,8 +25,8 @@ const page = () => {
             Turning Expiry into Opportunity
           </p>
         </div>
-        <div className="h-full lg:mt-auto mx-auto mr-auto lg:mb-24 lg:mr-24 aspect-square">
-          <div className="bg-green-800 rounded-full p-12 grid place-items-center">
+        <div className="h-full lg:mt-auto mx-auto mr-auto lg:mb-32 lg:mr-24 aspect-square">
+          <div className="bg-green-800 rounded-full p-12 grid place-items-center ml-2">
             <Image
               src="/assets/Landing Page pic1.png"
               width={600}
@@ -36,7 +36,7 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section className="min-h-screen">
+      <section className="">
         {/* // headline */}
         <div className="flex items-center flex-col">
           <p className="text-6xl mt-12 mb-3 font-bold">
@@ -91,7 +91,7 @@ const page = () => {
           </p>
         </div>
 
-        <div className="flex flex-row gap-3 justify-between mx-36 flex-wrap ">
+        <div className="flex flex-row gap-3 justify-between mx-36 flex-wrap mb-12">
           {category.map((item, index) => (
             <Category
               key={index}
