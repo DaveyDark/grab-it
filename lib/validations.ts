@@ -18,5 +18,5 @@ export const CustomerSchema = z.object({
   state: z.string().min(1),
   latitude: z.number().min(-90).max(90),
   longitude: z.number().min(-180).max(180),
-  pincode: z.string().min(1),
+  pincode: z.number(),
 });
