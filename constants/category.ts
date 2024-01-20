@@ -38,8 +38,8 @@ export const category = [
 export const category2 = [
   {
     img: "/assets/category/S_DChips.png",
-    link: "/category/atta",
-    tag: "Atta",
+    link: "/category/chips-and-namkeen",
+    tag: "Chips and Namkeen",
   },
   {
     img: "/assets/category/S_DSweets.png",
