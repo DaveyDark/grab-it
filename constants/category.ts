@@ -34,11 +34,16 @@ export const category = [
     link: '/category/spices',
     tag: 'Spices',
   },
-  {
-    img: '/assets/category/veg&fruits.png',
-    link: '/category/veg-fruits',
-    tag: 'Veg & Fruits',
-  },
 ];
 
-// Now, the 'category' array is populated with the provided data.
+export const productDetails = [
+  {
+    img: '/assets/products/chips.png',
+    name: 'Haldiram Potato Chips',
+    weight: '150g',
+    expiring: 'Expiring in 2 days',
+    originalPrice: '₹ 30',
+    discountedPrice: '₹ 25',
+  }
+]
+
