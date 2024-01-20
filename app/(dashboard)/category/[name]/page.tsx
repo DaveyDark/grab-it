@@ -7,7 +7,6 @@ import { getProducts } from "@/lib/actions/product.action";
 
 const Products = async ({ params }: any) => {
   const productDetails = await getProducts({ q: params.name });
-  console.log(productDetails);
   return (
     <div className="bg-[#F6FFF6] min-h-screen">
       <Navbar />
@@ -19,8 +18,8 @@ const Products = async ({ params }: any) => {
             img={product.image}
             name={product.name}
             weight={product.weight}
-            expiring={product.expiring}
-            originalPrice={product.originalPrice}
+            expiring={product.expiry}
+            originalPrice={product.mrp}
             discountedPrice={product.discountedPrice}
           />
         ))}
