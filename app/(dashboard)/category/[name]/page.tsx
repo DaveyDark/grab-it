@@ -6,7 +6,7 @@ import { productDetails } from "@/constants/category"; // Assuming this is the c
 import { getProducts } from "@/lib/actions/product.action";
 
 const Products = async ({ params }: any) => {
-  const productDetails = await getProducts({ q: params.name });
+  const productDetails = await getProducts({ category: params.name });
   return (
     <div className="bg-[#F6FFF6] min-h-screen">
       <Navbar />
@@ -14,7 +14,7 @@ const Products = async ({ params }: any) => {
       <div className="flex flex-row flex-wrap px-32 pt-20 justify-center">
         {productDetails.map((product, index) => (
           <ProductCard
-            key={index} // Added key attribute for list rendering
+            key={index}
             _id={product._id}
             img={product.image}
             name={product.name}

@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Category from "../components/category/page";
-import { category } from "@/constants/category";
+import { category, category2, category3 } from "@/constants/category";
 import Image from "next/image";
 import Footer from "@/components/shared/footer";
 
@@ -94,6 +94,38 @@ const page = () => {
 
         <div className="flex flex-row gap-3 justify-between mx-36 flex-wrap mb-12">
           {category.map((item, index) => (
+            <Category
+              key={index}
+              img={item.img}
+              link={item.link}
+              tag={item.tag}
+            />
+          ))}
+        </div>
+        <div className="grid items-center px-32">
+          <p className=" text-3xl font-semibold  pt-10 px-10 pb-5">
+            Snacks and Drinks
+          </p>
+        </div>
+
+        <div className="flex flex-row gap-3 justify-between mx-36 flex-wrap mb-12">
+          {category2.map((item, index) => (
+            <Category
+              key={index}
+              img={item.img}
+              link={item.link}
+              tag={item.tag}
+            />
+          ))}
+        </div>
+        <div className="grid items-center px-32">
+          <p className=" text-3xl font-semibold  pt-10 px-10 pb-5">
+            Household and Personal Care
+          </p>
+        </div>
+
+        <div className="flex flex-row gap-3 justify-between mx-36 flex-wrap mb-12">
+          {category3.map((item, index) => (
             <Category
               key={index}
               img={item.img}

@@ -39,9 +39,12 @@ export async function getProducts(params: any) {
         { description: { $regex: params.q, $options: "i" } },
       ];
     }
+    if (params.category) {
+      query.category = params.category;
+    }
     let sort = {};
     //TODO: implement sort
-    const products = await Product.find({});
+    const products = await Product.find(query);
     return products;
   } catch (err: any) {
     console.error(`Error getting product: ${err.message}`);
