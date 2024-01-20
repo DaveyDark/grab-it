@@ -1,4 +1,4 @@
-import Seller from "@/database/seller.model";
+"use server";
 import { connectToDatabase } from "../mongoose";
 import Customer from "@/database/customer.model";
 import { revalidatePath } from "next/cache";
@@ -41,6 +41,21 @@ export async function deleteUser(id: string) {
     }
     const deletedUser = await Customer.findByIdAndDelete(user._id);
     return deletedUser;
+  } catch (err: any) {
+    console.error(`Error getting user: ${err.message}`);
+    throw err;
+  }
+}
+
+export async function getUserByClerkId(clerkId: string) {
+  try {
+    await connectToDatabase();
+
+    const user = await Customer.findOne({ clerkId });
+    if (!user) {
+      throw new Error("User not found");
+    }
+    return user;
   } catch (err: any) {
     console.error(`Error getting user: ${err.message}`);
     throw err;

@@ -1,3 +1,4 @@
+"use server";
 import Seller from "@/database/seller.model";
 import { connectToDatabase } from "../mongoose";
 import { revalidatePath } from "next/cache";
