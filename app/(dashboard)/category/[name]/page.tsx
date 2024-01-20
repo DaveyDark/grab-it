@@ -21,6 +21,7 @@ const Products = async ({ params }: any) => {
             expiring={product.expiry}
             originalPrice={product.mrp}
             discountedPrice={product.discountedPrice}
+            link={product.link}
           />
         ))}
       </div>
