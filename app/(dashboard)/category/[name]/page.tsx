@@ -1,19 +1,22 @@
-import Navbar from '@/components/navbar/Navbar';
-import SmallNavbar from '@/components/smallNavbar/page';
-import ProductCard from '@/components/productCard/page'; // Corrected import path
-import React from 'react';
-import { productDetails } from '@/constants/category'; // Assuming this is the correct import path
+import Navbar from "@/components/navbar/Navbar";
+import SmallNavbar from "@/components/smallNavbar/page";
+import ProductCard from "@/components/productCard/page"; // Corrected import path
+import React from "react";
+import { productDetails } from "@/constants/category"; // Assuming this is the correct import path
+import { getProducts } from "@/lib/actions/product.action";
 
-const Products = () => {
+const Products = async ({ params }: any) => {
+  const productDetails = await getProducts({ q: params.name });
+  console.log(productDetails);
   return (
-    <div className='bg-[#F6FFF6] min-h-screen'>
+    <div className="bg-[#F6FFF6] min-h-screen">
       <Navbar />
       <SmallNavbar />
-      <div className='flex flex-row flex-wrap px-32 pt-20 justify-center'>
+      <div className="flex flex-row flex-wrap px-32 pt-20 justify-center">
         {productDetails.map((product, index) => (
           <ProductCard
             key={index} // Added key attribute for list rendering
-            img={product.img}
+            img={product.image}
             name={product.name}
             weight={product.weight}
             expiring={product.expiring}

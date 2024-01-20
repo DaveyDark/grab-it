@@ -41,7 +41,7 @@ export async function getProducts(params: any) {
     }
     let sort = {};
     //TODO: implement sort
-    const products = await Product.find(query);
+    const products = await Product.find({});
     return products;
   } catch (err: any) {
     console.error(`Error getting product: ${err.message}`);
