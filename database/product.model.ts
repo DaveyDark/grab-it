@@ -3,17 +3,17 @@ import { Schema, model, models } from "mongoose";
 export interface IProduct extends Document {
   name: string;
   image: string;
-  MRP: number;
-  PID: Schema.Types.ObjectId;
-  Description: string;
+  mrp: number;
+  description: string;
+  category: string;
 }
 
 const ProductSchema: Schema = new Schema({
   name: { type: String, required: true },
   image: { type: String, required: true },
-  MRP: { type: Number, required: true },
-  PID: { type: Schema.Types.ObjectId, required: true },
-  Description: { type: String },
+  mrp: { type: Number, required: true },
+  description: { type: String },
+  category: { type: String, required: true },
 });
 
 const Product = models.Product || model<IProduct>("Product", ProductSchema);
